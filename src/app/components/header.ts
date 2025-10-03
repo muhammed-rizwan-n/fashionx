@@ -53,7 +53,7 @@ export class HeaderComponent {
   mobileOpen = signal(false);
   searchOpen = signal(false);
   count!: Signal<number>;
-  navCollections = collections.map((c) => ({ handle: c.handle, title: c.title }));
+  navCollections = collections.map((c) => ({ handle: c.handle, title: c.title, image: c.image }));
 
   constructor(public cart: CartService) { this.count = this.cart.count; }
 
