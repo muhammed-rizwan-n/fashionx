@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ProductCardComponent } from '../components/product-card';
 import { ParallaxDirective } from '../directives/parallax.directive';
+import { ScrollRevealDirective } from '../directives/scroll-reveal.directive';
 import { products, collections } from '../data/mock-data';
 
 const ATTACH1 = 'https://cdn.builder.io/api/v1/image/assets%2F42f34e0d4e9f49d39977f8d378373b8d%2F4fbb655fffbd4767b31fea6a9c4af747?format=webp&width=1600';
