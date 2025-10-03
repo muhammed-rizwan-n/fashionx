@@ -13,7 +13,7 @@ const ATTACH3 = 'https://cdn.builder.io/api/v1/image/assets%2F42f34e0d4e9f49d399
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, ProductCardComponent, ParallaxDirective],
+  imports: [CommonModule, RouterLink, ProductCardComponent, ParallaxDirective, ScrollRevealDirective],
   template: `
     <section class="relative overflow-hidden">
       <div class="h-[72vh] md:h-[86vh]">
