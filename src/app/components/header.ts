@@ -52,10 +52,10 @@ import { SearchBarComponent } from './search-bar';
 export class HeaderComponent {
   mobileOpen = signal(false);
   searchOpen = signal(false);
-  count: Signal<number> = this.cart.count;
+  count!: Signal<number>;
   navCollections = collections.map((c) => ({ handle: c.handle, title: c.title }));
 
-  constructor(public cart: CartService) {}
+  constructor(public cart: CartService) { this.count = this.cart.count; }
 
   toggleSearch(force?: boolean) {
     if (typeof force === 'boolean') this.searchOpen.set(force);
