@@ -1,6 +1,6 @@
 import { Component, Signal, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { NgIf, CommonModule } from '@angular/common';
 import { CartService } from '../services/cart.service';
 import { CollectionDropdownComponent } from './collection-dropdown';
 import { collections } from '../data/mock-data';

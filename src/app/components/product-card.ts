@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NgOptimizedImage, NgIf, NgClass } from '@angular/common';
+import { NgOptimizedImage, NgIf, NgClass, CommonModule } from '@angular/common';
 import { Product } from '../data/types';
 import { RouterLink } from '@angular/router';
 import { CartService } from '../services/cart.service';

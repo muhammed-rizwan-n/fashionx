@@ -1,11 +1,11 @@
 import { Component, Signal } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, CommonModule } from '@angular/common';
 import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-cart-drawer',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, CommonModule],
   template: `
     <div *ngIf="open()" class="fixed inset-0 z-40 bg-black/40" (click)="cart.toggle(false)"></div>
     <aside
@@ -36,7 +36,7 @@ import { CartService } from '../services/cart.service';
         <footer class="border-t border-neutral-200 p-4">
           <div class="flex items-center justify-between text-sm">
             <div class="text-neutral-600">Subtotal</div>
-            <div class="font-semibold">₹{{ cart.subtotal() | number:'1.0-0' }}</div>
+            <div class="font-semibold">₹{{ subtotal() | number:'1.0-0' }}</div>
           </div>
           <button class="mt-4 w-full rounded-md bg-neutral-900 px-4 py-3 text-white hover:bg-neutral-800">Checkout</button>
         </footer>
@@ -45,9 +45,15 @@ import { CartService } from '../services/cart.service';
   `,
 })
 export class CartDrawerComponent {
-  open: Signal<boolean> = this.cart.isOpen;
-  items = this.cart.items;
-  constructor(public cart: CartService) {}
+  open!: Signal<boolean>;
+  items!: Signal<any[]>;
+  constructor(public cart: CartService) {
+    this.open = this.cart.isOpen;
+    this.items = this.cart.items;
+  }
+  subtotal() {
+    return this.cart.subtotal();
+  }
   inc(id: string) {
     const item = this.items().find((i) => i.product.id === id);
     if (item) this.cart.updateQuantity(id, item.quantity + 1);

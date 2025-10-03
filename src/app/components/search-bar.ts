@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Output, signal } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { products } from '../data/mock-data';
 
 @Component({
   selector: 'app-search-bar',
   standalone: true,
-  imports: [NgIf, NgFor, RouterLink],
+  imports: [NgIf, NgFor, RouterLink, CommonModule, FormsModule],
   template: `
     <div class="fixed inset-0 z-50 bg-black/50" (click)="close.emit()"></div>
     <div class="fixed left-1/2 top-10 z-50 w-[92vw] max-w-3xl -translate-x-1/2 rounded-xl border border-neutral-200 bg-white p-4 shadow-2xl">
@@ -36,5 +37,10 @@ import { products } from '../data/mock-data';
 export class SearchBarComponent {
   @Output() close = new EventEmitter<void>();
   q = '';
-  filtered = signal(products);
+
+  get filtered() {
+    const term = this.q.trim().toLowerCase();
+    if (!term) return products;
+    return products.filter((p) => p.title.toLowerCase().includes(term) || (p.tags || []).some((t) => t.includes(term)));
+  }
 }
