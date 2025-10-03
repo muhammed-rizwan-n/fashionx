@@ -1,4 +1,4 @@
-:root{
+:root {
   --bg: 210 16% 98%;
   --brand: 220 14% 8%;
   --accent: 354 70% 52%;
@@ -10,24 +10,72 @@
 @tailwind utilities;
 
 @layer base {
-  html,body { height: 100%; }
-  body { @apply bg-white text-neutral-900 antialiased; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
-  h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
-  a { @apply underline-offset-2; }
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    @apply bg-white text-neutral-900 antialiased;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Playfair Display", serif;
+  }
+  a {
+    @apply underline-offset-2;
+  }
 }
 
 @layer utilities {
-  .container { max-width: 1200px; margin-left: auto; margin-right: auto; }
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @layer components {
-  .hero-gradient { background: linear-gradient(90deg, rgba(239,68,68,0.06), rgba(15,23,42,0.02)); }
-  .card { @apply bg-white rounded-lg shadow-card border border-neutral-100 overflow-hidden; }
-  .glass { background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4)); backdrop-filter: blur(6px); }
-  .muted { color: #6b7280 }
+  .hero-gradient {
+    background: linear-gradient(
+      90deg,
+      rgba(239, 68, 68, 0.06),
+      rgba(15, 23, 42, 0.02)
+    );
+  }
+  .card {
+    @apply bg-white rounded-lg shadow-card border border-neutral-100 overflow-hidden;
+  }
+  .glass {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.4)
+    );
+    backdrop-filter: blur(6px);
+  }
+  .muted {
+    color: #6b7280;
+  }
 }
 
 @layer utilities {
-  .reveal { opacity: 0; transform: translateY(18px); transition: all 600ms cubic-bezier(.2,.9,.2,1); }
-  .reveal.show { opacity: 1; transform: translateY(0); }
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: all 600ms cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
