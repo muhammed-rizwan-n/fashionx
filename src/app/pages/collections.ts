@@ -11,7 +11,7 @@ import { ScrollRevealDirective } from '../directives/scroll-reveal.directive';
   imports: [CommonModule, ProductCardComponent, RouterLink, ScrollRevealDirective],
   template: `
     <div class="container mx-auto px-4 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8" appScrollReveal>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8" [appScrollReveal]="0.12">
         <aside class="md:col-span-1">
           <div class="card p-4">
             <h3 class="font-semibold mb-3">Collections</h3>
