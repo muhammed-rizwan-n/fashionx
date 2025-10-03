@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from '../components/product-card';
 import { collections, products } from '../data/mock-data';
 import { RouterLink } from '@angular/router';
+import { ScrollRevealDirective } from '../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-collections',
   standalone: true,
-  imports: [CommonModule, ProductCardComponent, RouterLink],
+  imports: [CommonModule, ProductCardComponent, RouterLink, ScrollRevealDirective],
   template: `
     <div class="container mx-auto px-4 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
