@@ -7,11 +7,12 @@ import { Directive, ElementRef, HostBinding, Input, OnDestroy, AfterViewInit } f
 export class ScrollRevealDirective implements AfterViewInit, OnDestroy {
   private obs?: IntersectionObserver;
   @HostBinding('class.show') isShown = false;
-  @Input('appScrollReveal') offset = 0.1;
+  @Input('appScrollReveal') offset: number | string = 0.1;
 
   constructor(private el: ElementRef<HTMLElement>) {}
 
   ngAfterViewInit() {
+    const threshold = typeof this.offset === 'string' ? Number(this.offset) || 0.1 : (this.offset as number);
     this.obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -21,7 +22,7 @@ export class ScrollRevealDirective implements AfterViewInit, OnDestroy {
           }
         });
       },
-      { threshold: this.offset }
+      { threshold }
     );
     this.el.nativeElement.classList.add('reveal');
     this.obs.observe(this.el.nativeElement);
