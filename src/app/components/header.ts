@@ -12,19 +12,19 @@ import { SearchBarComponent } from './search-bar';
   imports: [CommonModule, RouterLink, NgIf, CollectionDropdownComponent, SearchBarComponent],
   template: `
     <div class="bg-neutral-900 text-white text-xs text-center py-2">Free shipping on orders over ₹999</div>
-    <header class="sticky top-0 z-30 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-neutral-200">
-      <div class="container mx-auto px-4">
-        <div class="flex h-16 items-center justify-between">
-          <div class="flex items-center gap-6">
-            <a routerLink="/" class="font-serif text-xl tracking-wide text-neutral-900">fashionx</a>
-            <nav class="hidden md:flex items-center text-sm text-neutral-700">
-              <a routerLink="/" class="px-3 py-2 hover:text-neutral-900">Home</a>
-              <app-collection-dropdown [collections]="navCollections"></app-collection-dropdown>
-              <a routerLink="/collections" class="px-3 py-2 hover:text-neutral-900">Shop All</a>
-              <a routerLink="/contact" class="px-3 py-2 hover:text-neutral-900">Contact</a>
-            </nav>
-          </div>
-          <div class="flex items-center gap-4">
+    <header class="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-neutral-200">
+      <div class="container px-4">
+        <div class="flex h-20 items-center justify-between">
+          <nav class="hidden md:flex items-center gap-6 text-sm text-neutral-700">
+            <a routerLink="/" class="px-3 py-2 hover:text-neutral-900">Home</a>
+            <app-collection-dropdown [collections]="navCollections"></app-collection-dropdown>
+            <a routerLink="/collections" class="px-3 py-2 hover:text-neutral-900">Shop All</a>
+            <a routerLink="/contact" class="px-3 py-2 hover:text-neutral-900">Contact</a>
+          </nav>
+
+          <a routerLink="/" class="text-2xl font-serif tracking-wide text-neutral-900">fashionx</a>
+
+          <div class="flex items-center gap-3">
             <button aria-label="Search" class="p-2 hover:bg-neutral-100 rounded-md" (click)="toggleSearch()">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-5 w-5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
             </button>
