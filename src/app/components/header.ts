@@ -16,7 +16,7 @@ import { SearchBarComponent } from './search-bar';
       <div class="container mx-auto px-4">
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center gap-6">
-            <a routerLink="/" class="font-serif text-xl tracking-wide text-neutral-900">LabelBox</a>
+            <a routerLink="/" class="font-serif text-xl tracking-wide text-neutral-900">fashionx</a>
             <nav class="hidden md:flex items-center text-sm text-neutral-700">
               <a routerLink="/" class="px-3 py-2 hover:text-neutral-900">Home</a>
               <app-collection-dropdown [collections]="navCollections"></app-collection-dropdown>
