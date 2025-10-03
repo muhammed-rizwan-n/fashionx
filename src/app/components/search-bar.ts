@@ -19,7 +19,7 @@ import { products } from '../data/mock-data';
       />
       <div class="mt-3 max-h-80 overflow-auto divide-y divide-neutral-100">
         <a
-          *ngFor="let p of filtered()"
+          *ngFor="let p of filtered"
           [routerLink]="['/product', p.handle]"
           class="flex items-center gap-3 px-2 py-3 hover:bg-neutral-50"
           (click)="close.emit()"
