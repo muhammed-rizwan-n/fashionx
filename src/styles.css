@@ -1,3 +1,20 @@
+:root{
+  --bg: 210 16% 98%;
+  --brand: 220 14% 8%;
+  --accent: 354 70% 52%;
+  --muted: 220 12% 60%;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body { @apply bg-slate-50 text-neutral-800 antialiased; }
+  a { @apply underline-offset-2; }
+}
+
+@layer components {
+  .hero-gradient { background: linear-gradient(90deg, rgba(239,68,68,0.06), rgba(15,23,42,0.02)); }
+  .card { @apply bg-white rounded-lg shadow-card border border-neutral-100 overflow-hidden; }
+}
