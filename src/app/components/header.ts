@@ -9,7 +9,7 @@ import { SearchBarComponent } from './search-bar';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, NgIf, CollectionDropdownComponent, SearchBarComponent],
+  imports: [CommonModule, RouterLink, NgIf, CollectionDropdownComponent, SearchBarComponent],
   template: `
     <div class="bg-neutral-900 text-white text-xs text-center py-2">Free shipping on orders over ₹999</div>
     <header class="sticky top-0 z-30 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-neutral-200">
