@@ -49,7 +49,7 @@ const ATTACH3 = 'https://cdn.builder.io/api/v1/image/assets%2F42f34e0d4e9f49d399
       </div>
     </section>
 
-    <section class="container mx-auto px-4 py-12" appScrollReveal>
+    <section class="container mx-auto px-4 py-12" [appScrollReveal]="0.12">
       <h2 class="text-2xl font-semibold mb-6">Featured Collections</h2>
       <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
         <a *ngFor="let c of collections" routerLink="/collections" class="group block overflow-hidden rounded-lg border border-neutral-200 bg-white">
@@ -59,7 +59,7 @@ const ATTACH3 = 'https://cdn.builder.io/api/v1/image/assets%2F42f34e0d4e9f49d399
       </div>
     </section>
 
-    <section class="container mx-auto px-4 py-12" appScrollReveal>
+    <section class="container mx-auto px-4 py-12" [appScrollReveal]="0.12">
       <div class="flex items-center justify-between">
         <h2 class="text-2xl font-semibold">Popular Picks</h2>
         <a routerLink="/collections" class="text-sm text-neutral-600">View all</a>
