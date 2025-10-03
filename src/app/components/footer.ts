@@ -44,7 +44,7 @@ import { RouterLink } from '@angular/router';
           </div>
         </div>
         <div class="mt-10 flex items-center justify-between text-xs text-neutral-500">
-          <div>© {{ year }} LabelBox. All rights reserved.</div>
+          <div>© {{ year }} fashionx. All rights reserved.</div>
           <div class="flex items-center gap-4">
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
