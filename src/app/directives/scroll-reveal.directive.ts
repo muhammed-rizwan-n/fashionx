@@ -7,7 +7,7 @@ import { Directive, ElementRef, HostBinding, Input, OnDestroy, AfterViewInit } f
 export class ScrollRevealDirective implements AfterViewInit, OnDestroy {
   private obs?: IntersectionObserver;
   @HostBinding('class.show') isShown = false;
-  @Input('appScrollReveal') offset: number | string = 0.1;
+  @Input('appScrollReveal') offset: any = 0.1;
 
   constructor(private el: ElementRef<HTMLElement>) {}
 
