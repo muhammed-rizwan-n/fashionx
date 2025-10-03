@@ -7,7 +7,7 @@ import { CartService } from '../services/cart.service';
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [NgOptimizedImage, RouterLink, NgIf, NgClass],
+  imports: [CommonModule, NgOptimizedImage, RouterLink, NgIf, NgClass],
   template: `
     <div class="group relative bg-white rounded-lg shadow-box overflow-hidden border border-neutral-200">
       <a [routerLink]="['/product', product.handle]" class="block aspect-[3/4] overflow-hidden">
