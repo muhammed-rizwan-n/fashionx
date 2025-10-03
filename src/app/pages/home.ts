@@ -11,7 +11,7 @@ import { products, collections } from '../data/mock-data';
   imports: [CommonModule, RouterLink, ProductCardComponent, ParallaxDirective],
   template: `
     <section class="relative overflow-hidden">
-      <div appParallax="0.25" class="h-[60vh] bg-[url('https://images.unsplash.com/photo-1520975922215-230f6c1d5b21?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center flex items-center">
+      <div [appParallax]="0.25" class="h-[60vh] bg-[url('https://images.unsplash.com/photo-1520975922215-230f6c1d5b21?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center flex items-center">
         <div class="container mx-auto px-4 text-white">
           <h1 class="text-4xl md:text-6xl font-serif font-bold">Effortless Elegance</h1>
           <p class="mt-4 max-w-xl text-lg">A curated collection of modern essentials. Inspired by TheLabelLife.</p>
